@@ -1,0 +1,4 @@
+Read this care-fully:
+
+add all sub html files like trust authority sub htmls are: (tahome tadatausers requestedfiles logout)
+add those html files in respected their folder co reduce confution .
