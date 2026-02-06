@@ -188,15 +188,16 @@ function login(){
   const password = document.getElementById("password").value;
 
   // Check for empty fields
-  if(!email || !privateKey || !password){
-    alert("Please fill in all required fields!");
-    return;
-  }
+  //if(!email || !privateKey || !password){
+  //  alert("Please fill in all required fields!");
+  //  return;
+  //}
 
   // Get registered user from localStorage
   const user = JSON.parse(localStorage.getItem("user"));
 
   if(!user){
+    window.location.href ="dohomepage.html";
     alert("No registered user found. Please register first.");
     return;
   }
@@ -204,8 +205,9 @@ function login(){
   // Check credentials
   if(email === user.email && privateKey === user.privateKey && password === user.password){
     alert("Login Successful!");
-    window.location.href = "dataowner.html"; // redirect after success
+     // redirect after success
   } else {
+    window.location.href ="dohomepage.html";
     alert("Invalid credentials! Please try again.");
   }
 }
