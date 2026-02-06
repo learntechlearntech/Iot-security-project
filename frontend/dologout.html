@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Owner Logout</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .logout-box {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-box h2 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .logout-box p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .login-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .login-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="logout-box">
+    <h2>Data Owner</h2>
+    <p>You have been successfully logged out.</p>
+    <a href="dataowner.html" class="login-btn">Login Again</a>
+</div>
+
+<script>
+    // Clear stored session data
+    sessionStorage.clear();
+    localStorage.clear();
+
+    // Prevent back button after logout
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+</script>
+
+</body>
+</html>
